@@ -1,6 +1,6 @@
 # 🧾 task-cli — Interactive Task Manager in Node.js
 
-`task-cli` is a simple and interactive command-line tool to manage your to-do tasks using plain JSON storage. Easily add, update, delete, and mark tasks with statuses like `todo`, `in-progress`, or `done`.
+`task-cli` is a simple and interactive command-line tool to manage your to-do tasks using plain JSON storage. Easily add, update, delete, and mark tasks with statuses like `todo`, `in-progress`, or `done`. Here is the project URL https://roadmap.sh/projects/task-tracker
 
 ## 🚀 Features
 
