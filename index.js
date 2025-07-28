@@ -63,6 +63,9 @@ async function main() {
             case 'list':
                 handleList(args[1])
                 break
+            case 'help':
+                handleHelp()
+                break
             case 'exit':
                 console.log('Exiting task cli...')
                 process.exit(0)
@@ -186,5 +189,23 @@ function handleList(status) {
         console.log(`   Updated: ${task.updatedAt}\n`);
     })
 }
+
+function handleHelp() {
+    console.log(`
+        task-cli Help
+
+        Available Commands:
+        add "task description"         Add a new task
+        update <id> "new description"  Update a task by ID
+        delete <id>                    Delete a task by ID
+        mark-in-progress <id>          Mark task as in-progress
+        mark-done <id>                 Mark task as done
+        list                           List all tasks
+        list <status>                  List tasks by status (todo | in-progress | done)
+        help                           Show this help message
+        exit                           Exit the CLI
+    `);
+}
+
 
 main()
