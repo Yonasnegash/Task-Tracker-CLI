@@ -88,7 +88,7 @@ After starting the CLI with node index.ts, you can use the following commands in
 
 All tasks are stored in a local file called tasks.json. Structure example:
 
-    ```json
+   ```json
     {
         id: 1,
         description: "Buy groceries",
@@ -96,7 +96,7 @@ All tasks are stored in a local file called tasks.json. Structure example:
         createdAt: "2025-07-28T12:34:56.000Z",
         updatedAt: "2025-07-28T12:34:56.000Z"
     }
-    ```
+   ```
 
 ### License
 MIT License — free to use and modify.
