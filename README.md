@@ -31,58 +31,58 @@ After starting the CLI with node index.ts, you can use the following commands in
 
 ### Adding a new task
 
-    ```bash
-    add "Buy groceries"
-    # Output: Task added successfully (ID: 1)
-    ```
+   ```bash
+   add "Buy groceries"
+   # Output: Task added successfully (ID: 1)
+   ```
 
 ### Updating a task
 
-    ```bash
-    update <id> "Buy groceries and cook dinner"
-    ```
+   ```bash
+   update <id> "Buy groceries and cook dinner"
+   ```
 
 ### Deleting a task
 
-    ```bash
-    delete <id>
-    ```
+   ```bash
+   delete <id>
+   ```
 
 ### Marking a task as in-progress
 
-    ```bash
-    mark-in-progress <id>
-    ```
+   ```bash
+   mark-in-progress <id>
+   ```
 
 ### Marking a task done
 
-    ```bash
-    mark-done <id>
-    ```
+   ```bash
+   mark-done <id>
+   ```
 
 ### Listing all tasks
 
-    ```bash
-    list
-    ```
+   ```bash
+   list
+   ```
 
 ### Listing tasks by status
 
-    ```bash
-    list <status>
-    ```
+   ```bash
+   list <status>
+   ```
 
 ### Getting help on the commands
 
-    ```bash
-    help
-    ```
+   ```bash
+   help
+   ```
 
 ### Exit CLI
 
-    ```bash
-    exit
-    ```
+   ```bash
+   exit
+   ```
 
 ## Data Storage
 
