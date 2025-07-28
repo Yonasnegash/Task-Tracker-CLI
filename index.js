@@ -1,7 +1,14 @@
 const fs = require('fs')
 const path = require('path')
+const readline = require('readline')
 
 const TASK_FILE = path.join(__dirname, 'tasks.json')
+
+// Setup readline interface
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
 
 // Ensure tasks.json file exist
 const ensureTaskFile = () => {
@@ -22,25 +29,46 @@ const saveTasks = (tasks) => {
     fs.writeFileSync(TASK_FILE, JSON.stringify(tasks))
 }
 
-function main() {
-    const args = process.argv.slice(2)
-    const command = args[0]
+const prompt = (question) => {
+    return new Promise(resolve => rl.question(question, answer => resolve(answer.trim())))
+}
 
-    switch(command) {
-        case 'add':
-            return handleAdd(args.slice(1))
-        case 'update':
-            return handleUpdate(args.slice(1))
-        case 'delete':
-            return handleDelete(args.slice(1))
-        case 'mark-in-progress':
-            return handleChangeStatus(args.slice(1), 'in-progress')
-        case 'mark-done':
-            return handleChangeStatus(args.slice(1), 'done')
-        case 'list':
-            return handleList(args[1])
-        default:
-            console.log('Uknown command')
+const parseInput = (input) => {
+    const matches = input.match(/"[^"]+"|\S+/g) || []
+    return matches.map(arg => arg.replace(/^"|"$/g, ''))
+}
+
+async function main() {
+    while (true) {
+        const input = await prompt("task-cli ")
+        const args = parseInput(input)
+        const command = args[0]
+
+        switch(command) {
+            case 'add':
+                handleAdd(args.slice(1))
+                break
+            case 'update':
+                handleUpdate(args.slice(1))
+                break
+            case 'delete':
+                handleDelete(args.slice(1))
+                break
+            case 'mark-in-progress':
+                handleChangeStatus(args.slice(1), 'in-progress')
+                break
+            case 'mark-done':
+                handleChangeStatus(args.slice(1), 'done')
+                break
+            case 'list':
+                handleList(args[1])
+                break
+            case 'exit':
+                console.log('Exiting task cli...')
+                process.exit(0)
+            default:
+                console.log('Uknown command')
+        }
     }
 }
 
