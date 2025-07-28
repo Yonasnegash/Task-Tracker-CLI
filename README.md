@@ -15,7 +15,7 @@
 1. **Clone the repo:**
 
    ```bash
-   git clone https://github.com/yourusername/task-cli.git
+   git clone https://github.com/Yonasnegash/Task-Tracker-CLI.git
    cd task-cli
    ```
 
