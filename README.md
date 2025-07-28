@@ -90,11 +90,11 @@ All tasks are stored in a local file called tasks.json. Structure example:
 
    ```json
    {
-       id: 1,
-       description: "Buy groceries",
-       status: "todo",
-       createdAt: "2025-07-28T12:34:56.000Z",
-       updatedAt: "2025-07-28T12:34:56.000Z"
+    "id": 1,
+    "description": "Buy groceries",
+    "status": "todo",
+    "createdAt": "2025-07-28T12:34:56.000Z",
+    "updatedAt": "2025-07-28T12:34:56.000Z"
    }
    ```
 
